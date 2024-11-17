@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>semaforo</title>
+    <link rel="stylesheet" href="static/css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+</head>
+<body class="colore">
+    <p class="titolo"> ecco qui un sembaforo che cambierà colore da rosso a verde, appena scatterà il verde premi il pulsante in basso e verrà lanciato a schermo quanto tempo ci hai messo a cliccare il pulsante  </p>
+    <div class="semaforo">
+        <div id="cambiocolore1" class="luce"></div>
+        <div id="cambiocolore2" class="luce"></div>
+        <div id="cambiocolore3" class="luce"></div>
+    </div>
+    <form>
+        <input id="butt" type="button" value="premi" class="bottone">
+    </form>
+    <div id="messaggio"></div>
+</div>
+
+<script>
+    let button = document.querySelector("#butt");
+    let message = document.querySelector("#messaggio");
+    let circle1 = document.querySelector("#cambiocolore1");
+    let circle2 = document.querySelector("#cambiocolore2");
+    let circle3 = document.querySelector("#cambiocolore3");
+    let now 
+    let now2 
+
+
+    setTimeout(function(){
+        cambiocolore1.classList.add("rosso");
+    }, 2000)
+
+    setTimeout(function(){
+        cambiocolore2.classList.add("rosso");
+    }, 4000)
+
+    setTimeout(function(){
+        cambiocolore3.classList.add("rosso");
+    }, 6000)
+
+    setTimeout(function(){
+        cambiocolore1.classList.remove("rosso")
+        cambiocolore2.classList.remove("rosso")
+        cambiocolore3.classList.remove("rosso")
+        cambiocolore1.classList.add("verde");
+        cambiocolore2.classList.add("verde");
+        cambiocolore3.classList.add("verde");
+        now = new Date()
+    }, 8000)
+
+    button.addEventListener('click', function () {
+        if (now>0){
+            now2 = new Date()
+        let now3 = (now2 - now)/1000;
+        message.textContent= "hai premuto il pulsante in " + now3;
+        }
+
+    })
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
