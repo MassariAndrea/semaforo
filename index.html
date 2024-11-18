@@ -28,19 +28,30 @@
     let circle3 = document.querySelector("#cambiocolore3");
     let now 
     let now2 
+    let random1 = generateRandomInteger(1,5);
+    let random2 = generateRandomInteger(1,5);
+    let random3 = generateRandomInteger(1,5);
+    let random4 = generateRandomInteger(1,5);
+    let tempo1 = (random1)*1000;
+    let tempo2 = (random1+random2)*1000;
+    let tempo3 = (random1+random2+random3)*1000;
+    let tempo4 = (random1+random2+random3+random4)*1000;
 
-
+    function generateRandomInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+ 
     setTimeout(function(){
         cambiocolore1.classList.add("rosso");
-    }, 2000)
+    }, tempo1)
 
     setTimeout(function(){
         cambiocolore2.classList.add("rosso");
-    }, 4000)
+    }, tempo2)
 
     setTimeout(function(){
         cambiocolore3.classList.add("rosso");
-    }, 6000)
+    }, tempo3)
 
     setTimeout(function(){
         cambiocolore1.classList.remove("rosso")
@@ -50,7 +61,7 @@
         cambiocolore2.classList.add("verde");
         cambiocolore3.classList.add("verde");
         now = new Date()
-    }, 8000)
+    }, tempo4)
 
     button.addEventListener('click', function () {
         if (now>0){
